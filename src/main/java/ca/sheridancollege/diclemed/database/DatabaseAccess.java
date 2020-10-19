@@ -1,3 +1,7 @@
+/* 
+ *  Name: Dan Di Clemente
+ */
+
 package ca.sheridancollege.diclemed.database;
 
 import java.util.HashMap;
