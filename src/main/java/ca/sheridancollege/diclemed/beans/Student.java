@@ -1,3 +1,7 @@
+/* 
+ *  Name: Dan Di Clemente
+ */
+
 package ca.sheridancollege.diclemed.beans;
 
 import java.io.Serializable;
