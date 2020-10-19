@@ -1,2 +1,10 @@
 # StudentDatabase
-Java, Spring (H2 DB, JDBC), Lombok, Thymeleaf, HTML, CSS
+
+* Application built to learn Spring Web, JDBC, H2 database, simple SQL queries
+* Users can enter a student name to the database
+* Able to add, update, search and delete from the database
+
+# What I Learned
+
+* Using H2 database, and creating a JDBC template
+* How to map SQL parameters to the JDBC template
