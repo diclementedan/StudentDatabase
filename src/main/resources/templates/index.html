@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Student Display</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+
+	<h1>This is index.html</h1>
+	<div class = "container">
+		<table class="table table-bordered table-striped">
+			<tr>
+				<th style = "font-size: 1.5em;" colspan = "3">List of Students:</th>
+			</tr>
+			<tr>
+				
+			</tr>
+			<tr th:each="s:${studentList}">
+				<td><a th:href="@{/editStudent/}+${s.id}">Edit</a></td>
+				<!-- http://localhost:8080/editStudent/1 -->
+				<td><a th:href="@{/deleteStudent/}+${s.id}">Delete</a></td>
+				<!-- http://localhost:8080/deleteStudent/1 -->
+				<td th:text="${s.name}">Jim</td>
+			</tr>
+		</table>
+		
+		<form method="post" action="" th:action="@{/insertStudent}"
+			th:object="${student}" class="main-form">
+			<h3>Add a student to the table:</h3>
+			<input type="hidden" name="id" th:field="*{id}" />
+			<div class="form-group">
+				<label for="name">Name: </label>
+				<input type="text" name="name" th:field="*{name}" id="name"/><br>
+			</div>
+			<input type = "submit" value = "Add!" class = "btn btn-primary"/>
+		</form>
+		
+		<form method="post" action="" th:action="@{/searchStudent}" th:object="${student}"
+			class = "main-form">
+			<h3>Search for a Student in the table:</h3>
+			<input type="hidden" name="id" th:field="*{id}"/>
+			<div class = "form-group">
+				<label for = "searchName">Name: </label>
+				<input type="text" name="name" th:field="*{name}" id = "searchName"/><br>
+			</div>
+			
+			
+			<input type = "submit" value = "Search" class = "btn btn-primary"/>
+		</form>
+		
+		<form th:field="*{id}" th:object="${student}" class = "main-form">
+			<h3>Search result:</h3>
+			<div class = "form-group">
+			<label for="result">Result: </label>
+				<select th:field="*{id}" id = "result">
+					<option th:each="s:${searchStudentList}" th:value="${s.id}" th:text="${s.name}"/>
+				</select>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

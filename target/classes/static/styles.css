@@ -1,0 +1,23 @@
+h1 {
+	text-align: center;
+	padding: 20px;
+	font-size: 5em;
+}
+
+.main-form{
+	width: 700px auto;
+	margin: 60px auto;
+	border: 2px solid black;
+	padding: 30px;
+}
+
+.table{
+	width: 700px auto;
+	margin: 60px auto;
+	border: 2px solid black;
+	padding: 30px;
+}
+
+td, th {
+	text-align: center;
+}

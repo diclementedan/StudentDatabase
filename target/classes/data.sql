@@ -1,0 +1,1 @@
+insert into student(name) values('John');
